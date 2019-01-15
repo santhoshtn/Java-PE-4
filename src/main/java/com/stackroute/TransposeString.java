@@ -1,5 +1,11 @@
-public class transposeString {
+package com.stackroute;
+
+public class TransposeString {
     public static String transpose(String input){
+        if(input==null)
+        {
+            return null;
+        }
         String[] split=input.split("\\s");
         String returnString="";
         for(int i=0;i<split.length;i++){
@@ -10,7 +16,4 @@ public class transposeString {
         }
         return returnString.trim();
     }
-    public static void main(String[] args){
-        System.out.println(transpose("I am Santhosh"));
-    }
-}
+   }

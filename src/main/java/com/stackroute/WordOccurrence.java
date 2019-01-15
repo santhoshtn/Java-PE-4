@@ -1,10 +1,16 @@
+package com.stackroute;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class wordOccurence {
-    public static String[] findIndexes(String word,String inputString){
-        List<Integer> Index=new ArrayList<Integer>();
-        List<String> returnString=new ArrayList<String>();
+public class WordOccurrence {
+    public  String[] findIndexes(String word,String inputString){
+        if(word==null || inputString==null)
+        {
+            return null;
+        }
+        List<Integer> Index=new ArrayList<>();
+        List<String> returnString=new ArrayList<>();
         int index = inputString.indexOf(word);
         Index.add(index);
         while (index >=0){
@@ -18,12 +24,5 @@ public class wordOccurence {
             returnString.add("Found at : "+item+" - "+length);
         }
         return returnString.toArray(new String[0]);
-    }
-
-    public static void main(String[] args) {
-        String[] result=findIndexes("see","see her sea hersee");
-        for (String item:result) {
-            System.out.println(item);
-        }
     }
 }
